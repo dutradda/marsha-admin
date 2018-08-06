@@ -1,21 +1,38 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import React from 'react';
+// import { BrowserRouter, Route, Switch } from 'react-router-dom';
+// import Index from './pages/index';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+// export default function App() {
+//   return (
+//     <BrowserRouter>
+//       <Switch>
+//         <Route exact path='/' component={Index}/>
+//         <Route path='/import-zip' component={Index}/>
+//         <Route path='/edit' component={Index}/>
+//       </Switch>
+//     </BrowserRouter>
+//   );
+// }
 
-export default App;
+
+import React from 'react';
+import { Admin } from 'react-admin';
+// import { Route, Switch } from 'react-router-dom';
+import dataProvider from './lib/dataProvider';
+import config from './config';
+import MarshaResource from './MarshaResource';
+
+import { MediaList, MediaCreate, MediaMp3Upload } from './medias';
+
+export default () => (
+  <Admin dataProvider={dataProvider(config.graphQL)}>
+      <MarshaResource
+        name="medias"
+        list={MediaList}
+        create={MediaCreate}
+        upload={MediaMp3Upload}
+      />
+  </Admin>
+);
+
+// <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon}/>

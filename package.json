@@ -3,16 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "material-ui": "^0.20.1",
+    "@material-ui/icons": "^2.0.1",
+    "form-data": "^2.3.2",
+    "ra-core": "^2.2.0",
     "react": "^16.4.2",
+    "react-admin": "^2.2.0",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4",
-    "relay": "^0.8.0-1"
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.0.0-beta.42",
+    "babel-core": "^6.26.3"
   }
 }
